@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/repos/asf/!svn/ver/664628/webservices/rampart/tags/java/1_4/1_4/modules/rampart-core/src/main/java/org/apache/rampart/builder
+END
+TransportBindingBuilder.java
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/repos/asf/!svn/ver/664628/webservices/rampart/tags/java/1_4/1_4/modules/rampart-core/src/main/java/org/apache/rampart/builder/TransportBindingBuilder.java
+END
+SymmetricBindingBuilder.java
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/repos/asf/!svn/ver/664628/webservices/rampart/tags/java/1_4/1_4/modules/rampart-core/src/main/java/org/apache/rampart/builder/SymmetricBindingBuilder.java
+END
+AsymmetricBindingBuilder.java
+K 25
+svn:wc:ra_dav:version-url
+V 156
+/repos/asf/!svn/ver/664628/webservices/rampart/tags/java/1_4/1_4/modules/rampart-core/src/main/java/org/apache/rampart/builder/AsymmetricBindingBuilder.java
+END
+BindingBuilder.java
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/repos/asf/!svn/ver/664628/webservices/rampart/tags/java/1_4/1_4/modules/rampart-core/src/main/java/org/apache/rampart/builder/BindingBuilder.java
+END

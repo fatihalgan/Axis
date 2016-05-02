@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsp:Policy xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+	xmlns="http://ws.apache.org/rampart/policy">
+	<RampartConfig>
+		<user>c1</user>
+		<passwordCallbackClass>com.ttdev.secure.client.PasswordCallbackHandler</passwordCallbackClass>
+		<signatureCrypto>
+			<crypto provider="org.apache.ws.security.components.crypto.Merlin">
+				<property name="org.apache.ws.security.crypto.merlin.keystore.type">JKS</property>
+				<property name="org.apache.ws.security.crypto.merlin.file">C:/TUMKeystore/keystore</property>
+				<property name="org.apache.ws.security.crypto.merlin.keystore.password">madcoder</property>
+			</crypto>
+		</signatureCrypto>
+	</RampartConfig>
+</wsp:Policy>

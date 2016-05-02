@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://example" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://example" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <schema elementFormDefault="qualified" targetNamespace="http://example" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:intf="http://example" xmlns:tns="http://example" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+
+			<element name="withdraw">
+				<complexType>
+					<sequence>
+						<element name="account" type="xsd:string"/>
+						<element name="amount" type="xsd:int"/>
+					</sequence>
+				</complexType>
+			</element>
+
+			<element name="withdrawResponse">
+				<complexType>
+					<sequence>
+						<element name="balance" type="xsd:int"/>
+					</sequence>
+				</complexType>
+			</element>
+
+			<element name="AccountNotExistFault">
+				<complexType>
+					<sequence>
+						<element name="account" type="xsd:string"/>
+					</sequence>
+				</complexType>
+			</element>
+
+			<element name="InsufficientFundFault">
+				<complexType>
+					<sequence>
+						<element name="account" type="xsd:string"/>
+						<element name="balance" type="xsd:int"/>
+						<element name="requestedFund" type="xsd:int"/>
+					</sequence>
+				</complexType>
+			</element>
+
+		</schema>
+  </wsdl:types>
+  <wsdl:message name="InsufficientFundFaultMessage">
+    <wsdl:part name="fault" element="tns:InsufficientFundFault">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="withdrawResponse">
+    <wsdl:part name="return" element="tns:withdrawResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="withdrawRequest">
+    <wsdl:part name="parameters" element="tns:withdraw">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="AccountNotExistFaultMessage">
+    <wsdl:part name="fault" element="tns:AccountNotExistFault">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="FaultHandling">
+    <wsdl:operation name="withdraw">
+      <wsdl:input name="withdrawRequest" message="tns:withdrawRequest">
+    </wsdl:input>
+      <wsdl:output name="withdrawResponse" message="tns:withdrawResponse">
+    </wsdl:output>
+      <wsdl:fault name="AccountNotExistException" message="tns:AccountNotExistFaultMessage">
+    </wsdl:fault>
+      <wsdl:fault name="InsufficientFundException" message="tns:InsufficientFundFaultMessage">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FaultHandlingSOAP" type="tns:FaultHandling">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="withdraw">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="withdrawRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="withdrawResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AccountNotExistException">
+        <wsdlsoap:fault name="AccountNotExistException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InsufficientFundException">
+        <wsdlsoap:fault name="InsufficientFundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FaultHandling">
+    <wsdl:port name="FaultHandlingSOAP" binding="tns:FaultHandlingSOAP">
+      <wsdlsoap:address location="http://localhost:8080/Axis2Samples/services/FaultHandling"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

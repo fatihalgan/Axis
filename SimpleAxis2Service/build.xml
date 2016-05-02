@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="SimpleService" basedir="." default="main">
+    <property file="build.properties"/>
+    <!-- ====== CLASSPATH DEFINITIONS =====  -->
+    <path id="build.classpath">
+        <pathelement path="${classpath.prefix}"/>
+        <pathelement location="${build.home}"/>
+        <fileset dir="${axis.home}/lib">
+            <include name="**/*.jar"/>
+        </fileset>
+        <pathelement path="${classpath.suffix}"/>
+    </path>
+    <!-- set the property for the above classpath so that it can be referenced elsewhere 
+		if needed -->
+    <property name="build.classpath" refid="build.classpath"/>
+    <!-- ====== TASK DEFINITIONS ====== -->
+    <target name="declare">
+        <taskdef name="codegen" classname="org.apache.axis2.tool.ant.AntCodegenTask" classpathref="build.classpath"/>
+    </target>
+	<target name="main" depends="declare">
+        <codegen wsdlfilename="SimpleService.wsdl" servicename="SimpleService" 
+        	portname="SimpleServiceSOAP" databindingname="adb" packagename="com.ttdev.ss" 
+        	serverside="true" generateservicexml="true" serversideinterface="true" 
+        	output="${project.home}"/>
+        <copy todir="${project.home}/lib">
+            <fileset dir="${axis.home}/lib">
+                <include name="*.jar"/>
+            </fileset>
+        </copy>
+    </target>
+</project>

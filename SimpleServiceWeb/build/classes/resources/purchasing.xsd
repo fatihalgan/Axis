@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://bar.org/purchasing" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://bar.org/purchasing">
+    <xsd:element name="productQuery">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element maxOccurs="unbounded" name="queryItem" type="tns:queryItemComplexType"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:complexType name="queryItemComplexType">
+        <xsd:attribute name="productId" type="xsd:string"/>
+        <xsd:attribute name="qty" type="xsd:int"/>
+    </xsd:complexType>
+    <xsd:element name="productQueryResult">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element maxOccurs="unbounded" name="resultItem" type="tns:resultItemComplexType"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:complexType name="resultItemComplexType">
+        <xsd:attribute name="productId" type="xsd:string"/>
+        <xsd:attribute name="price" type="xsd:int"/>
+    </xsd:complexType>
+    <xsd:element name="invalidProductId" type="xsd:string"/>
+    <xsd:element name="invalidQty" type="xsd:int"/>
+</xsd:schema>

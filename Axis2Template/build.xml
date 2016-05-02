@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Axis2Template" basedir="." default="deploy">
+	
+	<property name="project-name" value="ManualService"/>
+	<property file="build.properties"/>
+	
+	<property name="src.dir" value="src"/>
+	<property name="test.dir" value="test"/>
+	<property name="wsdl.dir" value="wsdl"/>
+	<property name="build.classes" value="build/classes"/>
+	<property name="wsdl.file" value="${wsdl.dir}/${project-name}.wsdl"/>
+	<property name="wsdl-namespace-to-package-mapping" value="urn:fake.gov:biz/reg=gov.biz.reg"/>
+	<property name="wsdl2j-java-package" value="gov.biz.reg"/>
+	<property name="wsdl2j-unwrap" value="false"/>
+	<property name="wsdl2j-client-synch-only" value="false"/>
+	<property name="wsdl2j-client-asynch-only" value="false"/>
+	<property name="generated.dir" value="generated"/>
+	
+	<path id="project.classpath">
+		<fileset dir="${build.classpath}">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+	
+	<property name="project.classpath" refid="project.classpath"/>
+	
+	<taskdef name="wsdl2java" classname="org.apache.axis2.tool.ant.AntCodegenTask"
+			classpathref="project.classpath"/>
+	
+	<target name="clean-generated">
+		<echo message="Cleaning the generated sources directory"/>
+		<delete includeemptydirs="true">
+			<fileset dir="${generated.dir}" includes="**/*"/>
+		</delete>
+	</target>
+	
+	<target name="clean" depends="clean-generated">
+		<echo message="Cleaning the build directory"/>
+		<delete includeemptydirs="true">
+			<fileset dir="build" includes="**/*"/>
+		</delete>
+		<echo message="Deleting the deployed service from Axis Home"/>
+		<delete dir="${axis.home}/services/${project-name}" excludes="services.list, version.aar" />
+	</target>
+	
+	<target name="server-codegen">
+		<echo message="Generating server side code"/>
+		<wsdl2java wsdlfilename="${wsdl.file}" output="${generated.dir}"
+			serverside="true" generateservicexml="true" packagename="${wsdl2j-java-package}.server"
+			databindingname="adb" portname="${project-name}SOAP" unpackclasses="true" serversideinterface="true" 
+			unwrap="${wsdl2j-unwrap}" namespacetopackages="${wsdl-namespace-to-package-mapping}">
+		</wsdl2java>
+		<copy todir="${src.dir}" overwrite="true" verbose="true">
+			<fileset dir="${generated.dir}/src" includes="**/*"/>
+		</copy>
+	</target>
+	
+	<target name="client-codegen">
+		<echo message="Generating client side code"/>
+		<wsdl2java wsdlfilename="${wsdl.file}" output="${generated.dir}"
+			serverside="false" generateservicexml="false" packagename="${wsdl2j-java-package}.client"
+			databindingname="adb" portname="${project-name}SOAP" synconly="${wsdl2j-client-synch-only}" 
+			asynconly="${wsdl2j-client-asynch-only}" unpackclasses="true" serversideinterface="false" 
+			unwrap="${wsdl2j-unwrap}" namespacetopackages="${wsdl-namespace-to-package-mapping}"
+			testcase="false">
+		</wsdl2java>
+		<copy todir="${src.dir}" overwrite="true" verbose="true">
+			<fileset dir="${generated.dir}/src" includes="**/*"/>
+		</copy>
+		<copy todir="${test.dir}" overwrite="false" verbose="true" failonerror="false">
+			<fileset dir="${generated.dir}/test" includes="**/*.java"/>
+		</copy>
+	</target>
+	
+	<target name="deploy" depends="server-codegen, client-codegen">
+		<copy todir="${axis.home}/services/${project-name}/META-INF" overwrite="true" verbose="true">
+			<fileset dir="${generated.dir}/resources" includes="**/*"/>
+		</copy>
+		<antcall target="clean-generated"/>
+	</target>
+	
+	<target name="deploy-clean" depends="clean, deploy">
+	
+	</target>
+	
+	<target name="tcpmon">
+		<java classname="org.apache.ws.commons.tcpmon.TCPMon" fork="true">
+			<classpath refid="project.classpath"></classpath>
+		</java>
+	</target> 
+	 
+</project>

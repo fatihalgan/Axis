@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/repos/asf/!svn/ver/664628/webservices/rampart/tags/java/1_4/1_4/modules/rampart-core/src/main/java/org/apache/rampart/handler
+END
+WSDoAllHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/repos/asf/!svn/ver/664628/webservices/rampart/tags/java/1_4/1_4/modules/rampart-core/src/main/java/org/apache/rampart/handler/WSDoAllHandler.java
+END
+RampartReceiver.java
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/repos/asf/!svn/ver/664628/webservices/rampart/tags/java/1_4/1_4/modules/rampart-core/src/main/java/org/apache/rampart/handler/RampartReceiver.java
+END
+WSDoAllSender.java
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/repos/asf/!svn/ver/664628/webservices/rampart/tags/java/1_4/1_4/modules/rampart-core/src/main/java/org/apache/rampart/handler/WSDoAllSender.java
+END
+WSSHandlerConstants.java
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/repos/asf/!svn/ver/664628/webservices/rampart/tags/java/1_4/1_4/modules/rampart-core/src/main/java/org/apache/rampart/handler/WSSHandlerConstants.java
+END
+WSDoAllReceiver.java
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/repos/asf/!svn/ver/664628/webservices/rampart/tags/java/1_4/1_4/modules/rampart-core/src/main/java/org/apache/rampart/handler/WSDoAllReceiver.java
+END
+RampartSender.java
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/repos/asf/!svn/ver/664628/webservices/rampart/tags/java/1_4/1_4/modules/rampart-core/src/main/java/org/apache/rampart/handler/RampartSender.java
+END
+PostDispatchVerificationHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 163
+/repos/asf/!svn/ver/664628/webservices/rampart/tags/java/1_4/1_4/modules/rampart-core/src/main/java/org/apache/rampart/handler/PostDispatchVerificationHandler.java
+END

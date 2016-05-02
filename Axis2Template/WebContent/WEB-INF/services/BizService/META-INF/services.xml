@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was auto-generated from WSDL -->
+<!-- by the Apache Axis2 version: 1.4.1  Built on : Aug 13, 2008 (05:03:35 LKT) -->
+<serviceGroup>
+    <service name="BizService">
+        <messageReceivers>
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-out" class="com.foo.server.BizServiceMessageReceiverInOut"/>
+        </messageReceivers>
+        <parameter name="ServiceClass">com.foo.server.BizServiceImpl</parameter>
+        <parameter name="useOriginalwsdl">true</parameter>
+        <parameter name="modifyUserWSDLPortAddress">true</parameter>
+        <operation name="query" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://foo.com">
+            <actionMapping>http://foo.com/NewOperation</actionMapping>
+            <outputActionMapping>http://foo.com/BizService/queryResponse</outputActionMapping>
+            <faultActionMapping faultName="f02">http://foo.com/BizService/query/Fault/f02</faultActionMapping>
+            <faultActionMapping faultName="queryInvalidQty">urn:queryqueryInvalidQty</faultActionMapping>
+            <faultActionMapping faultName="f01">http://foo.com/BizService/query/Fault/f01</faultActionMapping>
+            <faultActionMapping faultName="queryInvalidProductId">urn:queryqueryInvalidProductId</faultActionMapping>
+        </operation>
+    </service>
+</serviceGroup>

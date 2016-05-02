@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/repos/asf/!svn/ver/664628/webservices/rampart/tags/java/1_4/1_4/modules/rampart-core/src/main/java/org/apache/rampart/util
+END
+MessageOptimizer.java
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/repos/asf/!svn/ver/664628/webservices/rampart/tags/java/1_4/1_4/modules/rampart-core/src/main/java/org/apache/rampart/util/MessageOptimizer.java
+END
+HandlerParameterDecoder.java
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/repos/asf/!svn/ver/664628/webservices/rampart/tags/java/1_4/1_4/modules/rampart-core/src/main/java/org/apache/rampart/util/HandlerParameterDecoder.java
+END
+Axis2Util.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/repos/asf/!svn/ver/664628/webservices/rampart/tags/java/1_4/1_4/modules/rampart-core/src/main/java/org/apache/rampart/util/Axis2Util.java
+END
+RampartUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/repos/asf/!svn/ver/664628/webservices/rampart/tags/java/1_4/1_4/modules/rampart-core/src/main/java/org/apache/rampart/util/RampartUtil.java
+END

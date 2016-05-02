@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/repos/asf/!svn/ver/664628/webservices/rampart/tags/java/1_4/1_4/modules/rampart-core/src/main/java/org/apache/rampart/policy/model
+END
+SSLConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/repos/asf/!svn/ver/664628/webservices/rampart/tags/java/1_4/1_4/modules/rampart-core/src/main/java/org/apache/rampart/policy/model/SSLConfig.java
+END
+OptimizePartsConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 156
+/repos/asf/!svn/ver/664628/webservices/rampart/tags/java/1_4/1_4/modules/rampart-core/src/main/java/org/apache/rampart/policy/model/OptimizePartsConfig.java
+END
+CryptoConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/repos/asf/!svn/ver/664628/webservices/rampart/tags/java/1_4/1_4/modules/rampart-core/src/main/java/org/apache/rampart/policy/model/CryptoConfig.java
+END
+RampartConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/repos/asf/!svn/ver/664628/webservices/rampart/tags/java/1_4/1_4/modules/rampart-core/src/main/java/org/apache/rampart/policy/model/RampartConfig.java
+END

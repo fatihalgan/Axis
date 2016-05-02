@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="ManualService" targetNamespace="urn:fake.gov:biz/reg" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="urn:fake.gov:biz/reg" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="urn:fake.gov:biz/reg">
+      <xsd:element name="approved" type="xsd:string"/>
+	  <xsd:element name="rejected" type="xsd:string"/>
+      <xsd:element name="register">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="bizName" type="xsd:string"/>
+            <xsd:element name="ownerId" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="registerResponse">
+        <xsd:complexType>
+          <xsd:choice>
+          	<xsd:element ref="tns:approved"/>
+          	<xsd:element ref="tns:rejected"/>
+          </xsd:choice>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="registerRequest">
+    <wsdl:part name="parameters" element="tns:register">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="registerResponse">
+    <wsdl:part name="parameters" element="tns:registerResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ManualService">
+    <wsdl:operation name="register">
+      <wsdl:input message="tns:registerRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:registerResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ManualServiceSOAP" type="tns:ManualService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="register">
+      <soap:operation soapAction="urn:fake.gov:biz/reg/register"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ManualService">
+    <wsdl:port name="ManualServiceSOAP" binding="tns:ManualServiceSOAP">
+      <soap:address location="http://localhost:8080/Axis2Template/services/ManualService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

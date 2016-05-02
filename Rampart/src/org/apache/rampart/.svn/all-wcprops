@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repos/asf/!svn/ver/664628/webservices/rampart/tags/java/1_4/1_4/modules/rampart-core/src/main/java/org/apache/rampart
+END
+RampartMessageData.java
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/repos/asf/!svn/ver/664628/webservices/rampart/tags/java/1_4/1_4/modules/rampart-core/src/main/java/org/apache/rampart/RampartMessageData.java
+END
+RampartConstants.java
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/repos/asf/!svn/ver/664628/webservices/rampart/tags/java/1_4/1_4/modules/rampart-core/src/main/java/org/apache/rampart/RampartConstants.java
+END
+RampartException.java
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/repos/asf/!svn/ver/664628/webservices/rampart/tags/java/1_4/1_4/modules/rampart-core/src/main/java/org/apache/rampart/RampartException.java
+END
+PolicyBasedResultsValidator.java
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/repos/asf/!svn/ver/664628/webservices/rampart/tags/java/1_4/1_4/modules/rampart-core/src/main/java/org/apache/rampart/PolicyBasedResultsValidator.java
+END
+ValidatorData.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/repos/asf/!svn/ver/664628/webservices/rampart/tags/java/1_4/1_4/modules/rampart-core/src/main/java/org/apache/rampart/ValidatorData.java
+END
+TokenCallbackHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/repos/asf/!svn/ver/664628/webservices/rampart/tags/java/1_4/1_4/modules/rampart-core/src/main/java/org/apache/rampart/TokenCallbackHandler.java
+END
+errors.properties
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/repos/asf/!svn/ver/664628/webservices/rampart/tags/java/1_4/1_4/modules/rampart-core/src/main/java/org/apache/rampart/errors.properties
+END
+PolicyValidatorCallbackHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/repos/asf/!svn/ver/664628/webservices/rampart/tags/java/1_4/1_4/modules/rampart-core/src/main/java/org/apache/rampart/PolicyValidatorCallbackHandler.java
+END
+MessageBuilder.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/repos/asf/!svn/ver/664628/webservices/rampart/tags/java/1_4/1_4/modules/rampart-core/src/main/java/org/apache/rampart/MessageBuilder.java
+END
+RampartEngine.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/repos/asf/!svn/ver/664628/webservices/rampart/tags/java/1_4/1_4/modules/rampart-core/src/main/java/org/apache/rampart/RampartEngine.java
+END
+Rampart.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/repos/asf/!svn/ver/664628/webservices/rampart/tags/java/1_4/1_4/modules/rampart-core/src/main/java/org/apache/rampart/Rampart.java
+END

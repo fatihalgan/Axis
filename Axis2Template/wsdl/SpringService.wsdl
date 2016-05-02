@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ttdev.com/ws" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SpringService" targetNamespace="http://ttdev.com/ws">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://ttdev.com/ws" xmlns:tns="http://ttdev.com/ws">
+      <xsd:element name="concat">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="s1" type="xsd:string"/>
+            <xsd:element name="s2" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="concatResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="r" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="concatRequest">
+    <wsdl:part element="tns:concat" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="concatResponse">
+    <wsdl:part element="tns:concatResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="SpringService">
+    <wsdl:operation name="concat">
+      <wsdl:input message="tns:concatRequest"/>
+      <wsdl:output message="tns:concatResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SpringServiceSOAP" type="tns:SpringService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="concat">
+      <soap:operation soapAction="http://ttdev.com/ws/concat"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SpringService">
+    <wsdl:port binding="tns:SpringServiceSOAP" name="SpringServiceSOAP">
+      <soap:address location="http://localhost:8080/Axis2Template/services/SpringService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
